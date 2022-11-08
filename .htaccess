@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteRule ^([^.]+)$ $1.php
+Options -Indexes
+
+ErrorDocument 403 /errors/error.html
+ErrorDocument 404 /errors/404.php
+
+RewriteRule ^(includes|scripts|videos|stills) - [F,L]
+
+<Files "config.ini">
+    Require all denied
+</Files>
